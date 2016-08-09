@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/pc.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <div class="header"></div>
+       <!--  左上角的旋转导航 -->
+        <div class="box">
+            <span></span>
+            <span></span>
+        </div>
+       <!-- 左边的下拉框 -->
+        <div class="left">
+            <div class="ul">
+                <h3>下拉内容</h3>
+                <h4>设备树</h4>
+                <ul>
+                    <li class='li'>1</li>
+                    <ol>
+                        <li>1111</li>
+                        <li>1112</li>
+                        <li>1113</li>
+                    </ol>
+                    <li class='li'>2</li>
+                    <ol>
+                        <li>1111</li>
+                        <li>1112</li>
+                        <li>1113</li>
+                    </ol>
+                    <li class='li'>3</li>
+                    <ol>
+                        <li>1111</li>
+                        <li>1112</li>
+                        <li>1113</li>
+                    </ol>
+                </ul>
+                <h4>设备树</h4>
+                <ul>
+                    <li class='li'>1</li>
+                    <ol>
+                        <li>1111</li>
+                        <li>1112</li>
+                        <li>1113</li>
+                    </ol>
+                    <li class='li'>2</li>
+                    <ol>
+                        <li>1111</li>
+                        <li>1112</li>
+                        <li>1113</li>
+                    </ol>
+                    <li class='li'>3</li>
+                    <ol>
+                        <li>1111</li>
+                        <li>1112</li>
+                        <li>1113</li>
+                    </ol>
+                </ul>
+                <h4>设备树</h4>
+                <ul>
+                    <li class='li'>1</li>
+                    <ol>
+                        <li>1111</li>
+                        <li>1112</li>
+                        <li>1113</li>
+                    </ol>
+                    <li class='li'>2</li>
+                    <ol>
+                        <li>1111</li>
+                        <li>1112</li>
+                        <li>1113</li>
+                    </ol>
+                    <li class='li'>3</li>
+                    <ol>
+                        <li>1111</li>
+                        <li>1112</li>
+                        <li>1113</li>
+                    </ol>
+                </ul>
+            </div>
+        </div>
+        <!-- 右边的控制面板 -->
+        <div class="right"></div>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script>
+        window.onload=function(){
+            $('.right').css({
+                '-webkit-transform':'translate3d(0px,0,0)',
+                '-webkit-transition':'transform .2s linear'
+            })
+        }
+        $('.box').on('click',function(){
+            $('.left').css({
+                '-webkit-transform':'translate3d(0px,0,0)',
+                '-webkit-transition':'transform .5s linear'
+            })
+        })
+        $('.left h4').on('click',function(){
+            var idx=$(this).index()
+            $(this).parent().children().eq(idx+1).slideToggle()   
+        })
+        $('.left .li').on('click',function(){
+            var idx=$(this).index()
+            $(this).parent().children().eq(idx+1).slideToggle()
+        })
+    </script>
+</body>
+</html>

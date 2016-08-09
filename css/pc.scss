@@ -1,0 +1,171 @@
+@charset "UTF-8";
+*{
+	margin:0;
+	padding:0;
+	-webkit-tap-lighting:none;
+}
+html,body{
+	width:100%;
+	height:100%;
+	overflow:hidden;
+}
+li{
+	list-style:none;
+}
+.container{
+	width:100%;
+	height:750px;
+	background:url('../img/bg.png') no-repeat;
+	background-size:100% 100%;
+}
+.header{
+	width:100%;
+	height:50px;
+	background:url('../img/header.png') no-repeat center;
+	background-size:100%;
+}
+/*-----------------------------旋转--------------------------------------*/
+@keyframes rotateleft{
+	0%{
+		-webkit-transform:rotate3d(0,0,1,0);
+	}
+	100%{
+		-webkit-transform:rotate3d(0,0,1,360deg);
+	}
+}
+@keyframes rotateright{
+	0%{
+		-webkit-transform:rotate3d(0,0,1,0);
+	}
+	100%{
+		-webkit-transform:rotate3d(0,0,1,-360deg);
+	}
+}
+.box{
+	position:fixed;
+	top:50px;
+	left:20px;
+	width:69px;
+	height:69px;
+	background:url('../img/nav.png') no-repeat;
+	background-size:100% 100%;
+	span{
+		&:nth-child(1){
+			position:absolute;
+			display:block;
+			z-index:1;
+			width:60px;
+			height:60px;
+			left:50%;
+			top:50%;
+			margin-left:-30px;
+			margin-top:-30px;
+			background:url('../img/left.png') no-repeat;
+			background-size:100% 100%;
+			-webkit-animation:rotateleft 2s linear infinite;
+		}
+		&:nth-child(2){
+			position:absolute;
+			display:block;
+			z-index:2;
+			width:50px;
+			height:50px;
+			left:50%;
+			top:50%;
+			margin-left:-25px;
+			margin-top:-25px;
+			background:url('../img/right.png') no-repeat;
+			background-size:100% 100%;
+			-webkit-animation:rotateright 1s linear infinite;
+		}
+	}
+}
+/*--------------------------右边的控制面板-------------------------------------*/
+.right{
+	width:300px;
+	height:300px;
+	background:red;
+	position:absolute;
+	right:0;
+	top:50%;
+	margin-top:-150px;
+	background:url('../img/mian.png') no-repeat;
+	background-size:100%;
+	-webkit-transform:translate3d(1000px,0,0);
+}
+/*--------------------------左边的下拉框-------------------------------------*/
+.left{
+	width:360px;
+	height:600px;
+	background:red;
+	background:url('../img/lbg.png') no-repeat;
+	background-size:100%;
+	-webkit-transform:translatex(-1000px);
+	position:absolute;
+	left:0;
+	top:50%;
+	margin-top:-150px;
+	.ul{
+		width:230px;
+		//height:280px;
+		position:relative;
+		top:70px;
+		left:90px;
+		//overflow-y:auto;
+		overflow-x:hidden;
+		h3{
+			width:90%;
+			height:20px;
+			font-size:14px;
+			line-height:20px;
+			color:white;
+			margin-bottom:11px;
+			padding-left:5px;
+		}
+		h4{
+			width:94%;
+			padding-left:25px;
+			height:15px;
+			font-size:12px;
+			line-height:17px;
+			color:white;
+			background:url('../img/chang.png') no-repeat;
+			background-size:91% 100%;
+			margin-bottom:2px;
+		}
+		h4+ul{
+			width:100%;
+			display:none;
+			.li{
+				width:84%;
+				padding-left:25px;
+				height:15px;
+				font-size:12px;
+				line-height:17px;
+				color:white;
+				background:url('../img/duan.png') no-repeat;
+				background-size:90% 100%;
+				margin-left:10%;
+				margin-bottom:2px;
+			}
+			li+ol{
+				width:100%;
+				display:none;
+				li{
+					width:72%;
+					padding-left:25px;
+					height:15px;
+					font-size:12px;
+					line-height:17px;
+					color:white;
+					background:url('../img/duan.png') no-repeat;
+					background-size:90% 100%;
+					margin-left:20%;
+					margin-bottom:2px;
+				}
+			}
+		}
+	}
+	
+}
+
